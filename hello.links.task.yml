@@ -1,0 +1,11 @@
+hello.onglet1:
+  title: onglet1
+  route_name: hello.helloroute
+  base_route: hello.ongletroute
+  weight: 1
+
+hello.onglet2:
+  title: onglet2
+  route_name: hello.ongletroute
+  base_route: hello.ongletroute
+  weight: 2

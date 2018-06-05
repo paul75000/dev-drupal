@@ -6,3 +6,11 @@ hello.helloroute:
     param: 'no param'
   requirements:
     _access: 'TRUE'
+
+hello.ongletroute:
+  path: '/onglet'
+  defaults:
+    _title: 'Onglet'
+    _controller: '\Drupal\hello\Controller\OngletController::content'
+  requirements:
+    _access: 'TRUE'

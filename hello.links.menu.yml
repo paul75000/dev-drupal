@@ -4,3 +4,10 @@ hello.page:
   description: 'hello page'
   menu_name: main
   weight: 10
+
+hello.pageonglet:
+  title: 'Onglet'
+  route_name: 'hello.ongletroute'
+  description: 'page avec onglet'
+  menu_name: main
+  weight: 11

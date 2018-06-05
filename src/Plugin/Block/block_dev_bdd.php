@@ -18,7 +18,7 @@ class Block_dev_bdd extends BlockBase{
    *Implements Drupal\Core\Block\BlockBase::build().
    */
   public function build(){
-    $number = \Drupal::database()->select('sessions')//j'utilise le service database, qui me permet de selectionner ma table session
+    $number = \Drupal::database()->select('sessions')//j'utilise le service database, qui me permet de selectionner ma table session, les methode suivantes appartient aux service database()
       ->countQuery()//je demande aux service de compter les entrées
       ->execute()//il execute la requete
       ->fetchField();//il fait la somme des entrées
