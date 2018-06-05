@@ -26,7 +26,8 @@ class Hello extends BlockBase{
        ]),
   	'#cache' => [
       'keys' =>['hello_cache_time'],
-      'max-age' => '10'
+      'max-age' => '1000',
+      'contexts' => ['user'],
   	],
 	];
   	return $build;
