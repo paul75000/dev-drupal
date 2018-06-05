@@ -1,0 +1,29 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+
+function hello_cron(){
+  drupal_set_message(t('hello man'), 'warning');
+}
+
+function hello_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+
+    case 'help.page.hello':
+      return '<p>' . t('hello page help'). '</p>';
+  }
+}
+
+/**
+ *Implements hook_user_login //remarque
+ */
+
+function hello_user_login($account){
+ // kint($account);
+  drupal_set_message(t('hello %name', ['%name' => $account->getAccountName()]
+  ));
+// % => c'est un placeholder
+}
