@@ -8,9 +8,10 @@ hello.helloroute:
     _access: 'TRUE'
 
 hello.ongletroute:
-  path: '/onglet'
+  path: '/onglet/{nodetype}'
   defaults:
     _title: 'Onglet'
     _controller: '\Drupal\hello\Controller\OngletController::content'
+    nodetype: NULL
   requirements:
     _access: 'TRUE'
