@@ -12,7 +12,7 @@ class OngletController extends ControllerBase{
     if($nodetype){
     	$query->condition('type', $nodetype);
     }
-    // on souhaite avoir un pager
+    // on souhaite avoir les 10 premier résultats
     $nids = $query->pager('10')->execute();
 
     //on charge le resultat de la query
@@ -30,7 +30,19 @@ class OngletController extends ControllerBase{
       '#title' => $this->t('node list title'),
     ];
 
-    return $list;
+    //pour faire apparaitre uue pagination, on vient de créer un nouveau render
+    $pager = ['#type' => 'pager'];
+   
+
+
+    return [
+    	'list' => $list,
+    	'pager' => $pager,
+    	'cache' => [
+    	  'keys' => ['hello:node_list'],
+          'tags' => ['node_list'],// cela permet de reconstruire le cavche ou cas une node serait créer, ou bien delete ou modified
+    	],
     //return['#markup' => /*$entities*/ $storage ];
+    ];
   }
 }
