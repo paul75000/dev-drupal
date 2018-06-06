@@ -27,3 +27,32 @@ function hello_user_login($account){
   ));
 // % => c'est un placeholder
 }
+
+function hello_node_update(NodeInterface $node){
+  $user = \Drupal::currentUser();
+  $database = \Drupal::database();
+
+  $database->insert('hello_node_history')
+    ->fields([
+      'nid' => $node->id(),
+      'uid' => $user->id(),
+      'update_time' => $node->getChangedTime(),
+    ])
+    ->execute();
+}
+
+function hello_node_delete(NodeInterface $node){
+  $database = \Drupal::database();
+  $database->delete('hello_node_history')
+    ->condition('nid', $node->id())
+    ->execute();
+}
+
+
+
+
+
+
+
+
+

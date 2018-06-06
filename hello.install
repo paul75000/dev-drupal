@@ -32,7 +32,7 @@ $schema['hello_node_history'] = [
  return $schema;
 }
 
-function hello_update_8001(){
+function hello_update_8002(){
   $schema = Database::getConnection()->schema();
   $schema->addField('hello_node_history', 'uid', ['description' => 'user id',
                                                    'type' => 'int',
