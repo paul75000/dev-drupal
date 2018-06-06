@@ -1,0 +1,30 @@
+<?php
+
+function hello_schema(){
+$schema['hello_node_history'] = [
+    'description' => 'Stores node update history.',
+    'fields' => [
+      'hid' => [
+        'description' => 'Primary Key: Unique history ID.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'nid' => [
+        'description' => 'Node ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'update_time' => [
+        'description' => 'Timestamp of node update.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+    ],
+    'primary key' => ['hid'],
+    'indexes' => ['nid' => ['nid']],
+  ];
+ return $schema;
+}
