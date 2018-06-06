@@ -9,3 +9,9 @@ hello.onglet2:
   route_name: hello.ongletroute
   base_route: hello.ongletroute
   weight: 2
+
+hello.history:
+  title: history
+  route_name: hello.history
+  base_route: entity.node.canonical
+  weight: 3

@@ -15,3 +15,11 @@ hello.ongletroute:
     nodetype: NULL
   requirements:
     _access: 'TRUE'
+
+hello.history:
+  path: 'node/{node}/history'
+  defaults:
+    _title: 'History'
+    _controller: '\Drupal\hello\Controller\HistoryController::content'
+  requirements:
+    _access: 'TRUE'
