@@ -18,7 +18,7 @@ class HistoryController extends ControllerBase{
     $uids = [];
     foreach ($result as $record){
     	$rows [] = [
-          $this->entityTypeManager()->getStorage('user')->load($record->uid)->toLink(),
+          $this->entityTypeManager()->getStorage('user')->load($record->uid)->toLink(),//rq: le link est fait sur le label de l'objet récupéré, de meme pour les exo avec cette methode
           \Drupal::service('date.formatter')->format($record->update_time),
     	];
     	$uids[] = 'user:' . $record->uid;
@@ -30,6 +30,12 @@ class HistoryController extends ControllerBase{
     ];
 
 
-    return $table; 
-  }
+    return [
+      'table' => $table,
+      '#cache' => [
+        'keys' => ['hello:node_history:' . $node->id()],
+        'tags' => array_merge(['node:' . $node->id()], $uids),//array_merge-> fusion de 2 tableau ici ['node:' . $node->id()] et celui de $uids
+      ],
+    ]; 
+  } 
 }
