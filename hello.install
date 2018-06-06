@@ -24,7 +24,13 @@ $schema['hello_node_history'] = [
         'unsigned' => TRUE,
         'not null' => TRUE,
       ],
-      
+      'uid' => [
+        'description' => 'user id',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        ],
+
     ],
     'primary key' => ['hid'],
     'indexes' => ['nid' => ['nid']],
@@ -35,9 +41,9 @@ $schema['hello_node_history'] = [
 function hello_update_8002(){
   $schema = Database::getConnection()->schema();
   $schema->addField('hello_node_history', 'uid', ['description' => 'user id',
-                                                   'type' => 'int',
-                                                   'unsigned' => TRUE,
-                                                   'not null' => TRUE, 
+                                                  'type' => 'int',
+                                                  'unsigned' => TRUE,
+                                                  'not null' => TRUE, 
                                                    ]
                    ); 
 
