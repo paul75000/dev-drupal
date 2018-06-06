@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Core\Database\Database;
+
 function hello_schema(){
 $schema['hello_node_history'] = [
     'description' => 'Stores node update history.',
@@ -22,9 +24,21 @@ $schema['hello_node_history'] = [
         'unsigned' => TRUE,
         'not null' => TRUE,
       ],
+      
     ],
     'primary key' => ['hid'],
     'indexes' => ['nid' => ['nid']],
   ];
  return $schema;
+}
+
+function hello_update_8001(){
+  $schema = Database::getConnection()->schema();
+  $schema->addField('hello_node_history', 'uid', ['description' => 'user id',
+                                                   'type' => 'int',
+                                                   'unsigned' => TRUE,
+                                                   'not null' => TRUE, 
+                                                   ]
+                   ); 
+
 }
