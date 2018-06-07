@@ -15,3 +15,9 @@ hello.history:
   route_name: hello.history
   base_route: entity.node.canonical #cette base_route a été trover grace a web profiler, sur chaque page on peut trouver la base route
   weight: 3
+
+hello.form:
+  title: history
+  route_name: hello.form
+  base_route: hello.ongletroute
+  weight: 4
