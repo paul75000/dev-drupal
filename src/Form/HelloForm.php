@@ -4,6 +4,10 @@ namespace Drupal\hello\form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\CssCommand;
+use Drupal\Core\Ajax\HtmlCommand;
+
 
 class HelloForm extends FormBase{
   public function getFormID(){
@@ -28,6 +32,11 @@ class HelloForm extends FormBase{
       '#title' => t('First value'),
       '#required' => TRUE,
       '#description' => t('Enter first value'),
+      '#ajax' => [
+        'callback' => array($this, 'validateTextAjax'),
+        'event' => 'change',
+      ],
+      '#suffix' => '<span class="text-message"></span>',
     ];
 
     $form['operation'] = [
@@ -51,11 +60,12 @@ class HelloForm extends FormBase{
       '#description' => t('Enter second value'),
     ];
 
-  	$form['submit'] = [
+    $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Calculate'),
-  	];
-
+      '#suffix' => '<span class="text-message"></span>',
+    ];
+   //ksm($form_state);
   	return $form;
   }
 
@@ -78,27 +88,38 @@ class HelloForm extends FormBase{
     $operation = $form_state->getValue('operation');
     $second_value = $form_state->getValue('second_value');
     $result = '';
-
+    
     if($operation == 'Addition'){
       $result = $first_value + $second_value;
-//      \Drupal::messenger()->addMessage('resultat :' . $result);
+      \Drupal::messenger()->addMessage('resultat :' . $result);
       $form_state->setRedirect('hello.formresult', ['result' => $result]);
     }
     if($operation == 'Soustraction'){
       $result = $first_value - $second_value;
-//      \Drupal::messenger()->addMessage('resultat :' . $result);
+      \Drupal::messenger()->addMessage('resultat :' . $result);
      $form_state->setRedirect('hello.formresult', ['result' => $result]);
     }
     if($operation == 'Multiplication'){
       $result = $first_value * $second_value;
-//      \Drupal::messenger()->addMessage('resultat :' . $result);
+      \Drupal::messenger()->addMessage('resultat :' . $result);
      $form_state->setRedirect('hello.formresult', ['result' => $result]);
     }
     if($operation == 'Division'){
       $result = $first_value / $second_value;
-//      \Drupal::messenger()->addMessage('resultat :' . $result);
+      \Drupal::messenger()->addMessage('resultat :' . $result);
      $form_state->setRedirect('hello.formresult', ['result' => $result]);
     }
 
+  }
+
+  public function validateTextAjax(array &$form, FormStateInterface $form_state){
+    $css = [ 'border' => ' 2px solid green'];
+    $message = 'ajax message: ' . $form_state->getValue('first_value');
+
+    $response = new AjaxResponse();
+    $response->addCommand(new CssCommand('#edit-first-value', $css));
+    $response->addCommand(new HtmlCommand('.text-message', $message));
+
+    return $response;
   }
 } 

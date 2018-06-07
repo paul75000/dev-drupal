@@ -1,0 +1,99 @@
+[33mcommit 417c6cbc404161b2de7d0f4739214c3f3a5bd3e1[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Thu Jun 7 14:13:02 2018 +0200
+
+    formulaire avec validation et redirect vers page de resultat
+
+[33mcommit 7656dabac5af911d0349cebf25365e59343a4114[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Thu Jun 7 10:51:59 2018 +0200
+
+    formulaire sans validation
+
+[33mcommit 5f5a02504479e08ea4163d413f344bcfc7a56827[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Wed Jun 6 17:39:06 2018 +0200
+
+    introduction creation formulaire
+
+[33mcommit cafef8be64144d3f425079f75b046792daaf2eeb[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Wed Jun 6 16:51:02 2018 +0200
+
+    exo historique avec tableau 2/2
+
+[33mcommit 36b475f75366c817c9535210883163fc975d0652[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Wed Jun 6 15:57:13 2018 +0200
+
+    exo historique avec tableau 1/2
+
+[33mcommit 734a26fc3c86cf5ad352db164e3afcd518c39617[m
+Merge: 620baf4 8bb3b64
+Author: Nam <n.truong.lt@gmail>
+Date:   Wed Jun 6 14:31:22 2018 +0200
+
+    X
+    
+    XXXXQqqWxwcwwxzcadcdc<
+    XXXXXXXXXXXXXXXXXMerge branch 'master' of https://github.com/paul75000/dev-drupal
+
+[33mcommit 620baf4d7bf5d67fc4b63991ac2cfe54e477ae45[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Wed Jun 6 14:30:57 2018 +0200
+
+    hook_update, hook_delete
+
+[33mcommit 8bb3b6456a5fe836c5fcdeb928ae7eb8902fd616[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Wed Jun 6 11:12:10 2018 +0200
+
+    ajout d'une table(=update de la bdd) bis
+
+[33mcommit 4a46bca57a4e7cccadf57cdbe1b431c1019254e5[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Wed Jun 6 10:43:46 2018 +0200
+
+    ajout d'une table(=update de la bdd)
+
+[33mcommit aa1cc223cadc1ea1685d3900657aec5ce685f14d[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Wed Jun 6 10:13:59 2018 +0200
+
+    creation table hello_schema en bdd
+
+[33mcommit 5cf36a5b867d9ad096cb7da9c271a82f7ab30ae5[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Tue Jun 5 17:11:24 2018 +0200
+
+    meme que precedenmment avec une pagination
+
+[33mcommit 04199fb3be4dbeebc592946633616079eef45777[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Tue Jun 5 16:12:34 2018 +0200
+
+    exo list 10 article + link to node
+
+[33mcommit 90ae46ea5265b1759103a8ad20ee2ec90130b833[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Tue Jun 5 14:50:47 2018 +0200
+
+    page avec onglet et menu
+
+[33mcommit d7385adddfe28b2006746af8e121e9a5d1135fe0[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Tue Jun 5 12:50:13 2018 +0200
+
+    exo nombre de session
+
+[33mcommit 9cef2f6063a1bd6bb270803a93d751f2b32b3d49[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Tue Jun 5 10:43:30 2018 +0200
+
+    cache time logged and nologged
+
+[33mcommit a6b6b7a87b354d46218a79ad5781e77936bcb83b[m
+Author: Nam <n.truong.lt@gmail>
+Date:   Tue Jun 5 09:31:14 2018 +0200
+
+    first page+block
