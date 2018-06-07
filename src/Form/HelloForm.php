@@ -59,6 +59,46 @@ class HelloForm extends FormBase{
   	return $form;
   }
 
+  public function validateForm(array &$form, FormStateInterface $form_state){
+    $first_value = $form_state->getValue('first_value');
+    $operation = $form_state->getValue('operation');
+    $second_value = $form_state->getValue('second_value');
+
+    if(!is_numeric($first_value) || !is_numeric($second_value)){
+      \Drupal::messenger()->addMessage('entrer une valeur numérique');
+    }
+    
+    if($operation == 'Division' && $second_value === '0'){
+      \Drupal::messenger()->addMessage('les divisions par zero sont impossible');
+    }
+  }
+
   public function submitForm(array &$form, FormStateInterface $form_state){
+    $first_value = $form_state->getValue('first_value');
+    $operation = $form_state->getValue('operation');
+    $second_value = $form_state->getValue('second_value');
+    $result = '';
+
+    if($operation == 'Addition'){
+      $result = $first_value + $second_value;
+//      \Drupal::messenger()->addMessage('resultat :' . $result);
+      $form_state->setRedirect('hello.formresult', ['result' => $result]);
+    }
+    if($operation == 'Soustraction'){
+      $result = $first_value - $second_value;
+//      \Drupal::messenger()->addMessage('resultat :' . $result);
+     $form_state->setRedirect('hello.formresult', ['result' => $result]);
+    }
+    if($operation == 'Multiplication'){
+      $result = $first_value * $second_value;
+//      \Drupal::messenger()->addMessage('resultat :' . $result);
+     $form_state->setRedirect('hello.formresult', ['result' => $result]);
+    }
+    if($operation == 'Division'){
+      $result = $first_value / $second_value;
+//      \Drupal::messenger()->addMessage('resultat :' . $result);
+     $form_state->setRedirect('hello.formresult', ['result' => $result]);
+    }
+
   }
 } 

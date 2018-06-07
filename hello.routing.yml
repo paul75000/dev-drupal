@@ -31,3 +31,12 @@ hello.form:
     _form: '\Drupal\hello\Form\HelloForm'
   requirements:
     _access: 'TRUE'
+
+hello.formresult:
+  path: '/result/{result}'
+  defaults:
+    _title: 'Resultat'
+    _controller: '\Drupal\hello\Controller\ResultController::content'
+    result: ''
+  requirements:
+    _access: 'TRUE'
