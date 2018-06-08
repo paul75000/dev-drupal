@@ -31,6 +31,7 @@ hello.form:
     _form: '\Drupal\hello\Form\HelloForm'
   requirements:
     _access: 'TRUE'
+    _permission: 'administer hello'
 
 hello.formresult:
   path: '/result/{result}'
@@ -40,6 +41,7 @@ hello.formresult:
     result: ''
   requirements:
     _access: 'TRUE'
+    _permission: 'administer hello'
 
 hello.admin_form:
   path: '/admin/appearance/block-color'
@@ -48,4 +50,4 @@ hello.admin_form:
     _form: '\Drupal\hello\Form\AdminForm'
   requirements:
     _access: 'TRUE'
-    _permission: 'administer hello'
+
