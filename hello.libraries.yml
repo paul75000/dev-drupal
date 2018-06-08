@@ -1,0 +1,6 @@
+moncss:
+  version: VERSION
+  css:
+    theme:
+      css/css_module.css: {}
+

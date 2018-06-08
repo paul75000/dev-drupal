@@ -21,3 +21,9 @@ hello.form:
   route_name: hello.form
   base_route: hello.ongletroute
   weight: 4
+
+hello.admin_form:
+  title: block color
+  route_name: hello.admin_form
+  base_route: system.themes_page
+  weight: 5

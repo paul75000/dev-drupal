@@ -47,8 +47,22 @@ function hello_node_delete(NodeInterface $node){
     ->condition('nid', $node->id())
     ->execute();
 }
-
-
+/**
+ *1)on injecte des class correspondent à nos valeurs du select du block color
+ */
+function hello_preprocess_block(array &$variables){
+   //drupal_set_message('test');
+  $class = \Drupal::config('hello.config')->get('color');
+  $variables['attributes']['class'][] = $class;
+}
+/**
+ *
+ *2)on créer une libraries et un css et cela permet à notre module de load la libraries, un
+ *peu comme avec le theme
+ */
+function hello_page_attachments(array &$variables){
+  $variables['#attached']['library'][] = 'hello/moncss';
+}
 
 
 

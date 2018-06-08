@@ -110,6 +110,8 @@ class HelloForm extends FormBase{
      $form_state->setRedirect('hello.formresult', ['result' => $result]);
     }
 
+    \Drupal::state()->set('timestamp_hello', REQUEST_TIME);
+
   }
 
   public function validateTextAjax(array &$form, FormStateInterface $form_state){

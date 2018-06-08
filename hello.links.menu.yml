@@ -11,3 +11,10 @@ hello.pageonglet:
   description: 'page avec onglet'
   menu_name: main
   weight: 11
+
+hello.admin_menu:
+  title: 'block color'
+  description: 'block color'
+  route_name: hello.admin_form
+  menu_menu: admin
+  parent: system.themes_page

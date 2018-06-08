@@ -40,3 +40,11 @@ hello.formresult:
     result: ''
   requirements:
     _access: 'TRUE'
+
+hello.admin_form:
+  path: '/admin/appearance/block-color'
+  defaults:
+    _title: 'Block color'
+    _form: '\Drupal\hello\Form\AdminForm'
+  requirements:
+    _access: 'TRUE'
