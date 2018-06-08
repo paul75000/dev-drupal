@@ -48,3 +48,4 @@ hello.admin_form:
     _form: '\Drupal\hello\Form\AdminForm'
   requirements:
     _access: 'TRUE'
+    _permission: 'administer hello'

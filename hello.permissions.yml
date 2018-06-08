@@ -1,0 +1,9 @@
+permission perso:
+  title: 'permission perso'
+  description: 'cela est ma permission personnelle'
+  restrict access: 'TRUE'
+
+administer hello:
+  title: 'administer hello'
+  description: 'cela est ma permission personnelle'
+  restrict access: 'TRUE'

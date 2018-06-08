@@ -3,7 +3,8 @@
 namespace Drupal\hello\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Access\AccessResult;
 /**
  *Provides a hello block
  *
@@ -31,6 +32,10 @@ class Hello extends BlockBase{
   	],
 	];
   	return $build;
+  }
+
+  protected function blockAccess(AccountInterface $account){
+    return AccessResult::allowedIfHasPermission($account, 'permission perso');
   }
 }
   
