@@ -65,6 +65,17 @@ function hello_page_attachments(array &$variables){
 }
 
 
+function hello_theme($existing, $type, $theme, $path){
+  return array(
+    'hello' => array(
+      'template' => 'hello',
+      'variables' => array(
+        'count' => NULL,
+        'node' =>NULL,
+      ), 
+    ),
+  );
+}
 
 
 

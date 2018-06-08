@@ -29,8 +29,16 @@ class HistoryController extends ControllerBase{
       '#rows' => $rows,
     ];
 
+    $count = count($rows);
+    // ksm($count);
+    $output = array(
+      '#theme' => 'hello',
+      '#count' => $count,
+      '#node' => $node,
+    );
 
     return [
+      'output' => $output,
       'table' => $table,
       '#cache' => [
         'keys' => ['hello:node_history:' . $node->id()],
