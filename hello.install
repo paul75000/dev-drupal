@@ -49,6 +49,6 @@ function hello_update_8002(){
 
 }
 
-{# function hello_uninstall(){
+function hello_uninstall(){
   \Drupal::state()->delete('timestamp_hello');
-} #}
+}
