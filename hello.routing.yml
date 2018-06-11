@@ -1,11 +1,11 @@
 hello.helloroute:
-  path: '/hello/{param}'
+  path: '/hello'
   defaults:
     _title: 'Hello'
     _controller: '\Drupal\hello\Controller\HelloController::content'
     param: 'no param'
   requirements:
-    _access: 'TRUE'
+    _access_hello: '48' 
 
 hello.ongletroute:
   path: '/onglet/{nodetype}'
