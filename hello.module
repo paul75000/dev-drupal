@@ -93,8 +93,21 @@ function hello_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_sta
    $form['subject']['#access'] = FALSE;
    $form['message']['#weight'] = 20;
    $form['actions']['submit']['#value'] = 'Message';
-    ksm($form);
+   // ksm($form);
   return $form;
 
   }
+}
+
+function hello_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode){
+  ksm($build);
+
+    $build['telephone'] = [
+      '#type' => 'tel',
+      '#title' => t('Enter your phone'),
+      '#required' => TRUE,
+      '#description' => t('enter a number phone'),
+      '#weight' => -15,
+    ];
+
 }
