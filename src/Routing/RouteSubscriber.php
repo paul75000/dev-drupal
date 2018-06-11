@@ -7,8 +7,7 @@ use Symfony\Component\Routing\RouteCollection;
 
 class RouteSubscriber extends RouteSubscriberBase{
 	protected function alterRoutes(RouteCollection $collection){
-	  ksm($collection);
-	  if($route = $collection->get('system.admin_structure')){
+	  if($route = $collection->get('node.add_page')){
 	  $route->setRequirement('_access', 'FALSE');
     }
   }
