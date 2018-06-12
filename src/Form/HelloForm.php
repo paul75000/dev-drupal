@@ -63,7 +63,7 @@ class HelloForm extends FormBase{
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Calculate'),
-      '#suffix' => '<span class="text-message"></span>',
+      //'#suffix' => '<span class="text-message"></span>',
     ];
    //ksm($form_state);
   	return $form;

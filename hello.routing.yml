@@ -59,3 +59,8 @@ hello.admin_form:
 #   requirements:
 #     _access_hello: 'monparam'
 
+hello.selectmap:
+  path: '/select-map'
+  defaults:
+    _title: 'Select your town'
+    _form: '\Drupal\hello\Form'
